@@ -1,0 +1,47 @@
+<section class="hero is-primary is-fullheight">
+  <div class="hero-body">
+    <div class="container has-text-centered">
+      <h1 class="title pacifico larger-text">
+        Cadastro
+      </h1>
+      <div class="columns">
+        <div class="column is-half is-offset-one-quarter">
+          <div class="notification is-danger" *ngIf="errors.length > 0">
+            <ul>
+              <li *ngFor="let err of errors">{{ err.message }}</li>
+            </ul>
+          </div>
+          <form [formGroup]="form">
+            <p class="control">
+              <input class="input is-large" type="text" placeholder="Nome" formControlName="firstName">
+            </p>
+            <p class="control">
+              <input class="input is-large" type="text" placeholder="Sobrenome" formControlName="lastName">
+            </p>
+            <p class="control is-danger" id="emailControl">
+              <input class="input is-large" [ngClass]="{'is-danger': (!form.controls.email.valid && !form.controls.email.pristine)}"
+                type="email" placeholder="E-mail" formControlName="email">
+              <span class="tag is-danger" *ngIf="!form.controls.email.valid && !form.controls.email.pristine">Email inválido</span>
+            </p>
+            <p class="control">
+              <input class="input is-large" type="text" placeholder="CPF" maxlength="11" formControlName="document" number>
+            </p>
+            <p class="control">
+              <input class="input is-large" type="text" placeholder="Usuário" formControlName="userName" >
+            </p>
+            <p class="control">
+              <input class="input is-large" type="password" placeholder="Senha" formControlName="password">
+            </p>
+            <p class="control">
+              <input class="input is-large" type="password" placeholder="Confirmar Senha" formControlName="confirmPassword">
+            </p>
+
+            <button (click)="submit()" class="button is-primary is-inverted is-large is-outlined is-fullwidth" [disabled]="!form.valid">Salvar</button>
+            <br>
+            <a class="button is-link is-fullwidth" routerLink="/">Voltar para login</a>
+          </form>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>

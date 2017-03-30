@@ -1,0 +1,56 @@
+<app-headbar></app-headbar>
+
+<section class="section">
+  <div class="container">
+    <div class="heading animated fadeIn">
+      <h1 class="title">Sua compra</h1>
+    </div>
+    <br>
+    <table class="table is-striped">
+      <thead>
+        <tr>
+          <th class="has-text-centered">Produto</th>
+          <th class="has-text-centered">Valor</th>
+          <th class="has-text-centered">Qtde</th>
+          <th class="has-text-centered">Total</th>
+          <th></th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr *ngFor="let item of items">
+          <td class="has-text-centered">{{ item.title }}</td>
+          <td class="has-text-centered">R$ {{ item.price | number: '1.2-2'}}</td>
+          <td class="has-text-centered">
+            <input type="number" class="input" [(ngModel)]="item.quantity" (change)="checkQuantity(item)" style="width: 60px;">
+          </td>
+          <td class="has-text-centered"><strong>R$ {{ (item.price * item.quantity) | number: '1.2-2' }}</strong></td>
+          <td class="has-text-centered" > <button (click)="removeItem(item)" type="button" class="button is-small is-darger"> Remover </button></td>
+        </tr>
+      </tbody>
+      <tfoot>
+        <tr>
+          <td colspan="4"><h4 class="title">SubTotal</h4></td>
+          <td class="has-text-centered"><strong>R$ {{ getSubTotal() | number: '1.2-2' }}</strong></td>
+        </tr>
+        <tr>
+          <td colspan="4"><h4 class="title">Desconto</h4></td>
+          <td class="has-text-centered"><strong>R$ {{ discount | number: '1.2-2' }}</strong></td>
+        </tr>
+        <tr>
+          <td colspan="4"><h4 class="title">Taxa de entrega</h4></td>
+          <td class="has-text-centered"><strong>R$ {{ deliveryFee | number: '1.2-2' }}</strong></td>
+        </tr>
+        <tr>
+          <td colspan="4"><h4 class="title">Total</h4></td>
+          <td class="has-text-centered"><strong>R$ {{ (getSubTotal() + deliveryFee) - discount | currency:'BRL' : true }}</strong></td>
+        </tr>
+      </tfoot>
+    </table>
+    <p class="has-text-right">
+      <button class="button is-success is-large animated pulse infinite" (click)="checkout()"><i class="fa fa-check">&nbsp;&nbsp;&nbsp;</i> Checkout</button>
+    </p>
+    
+  </div>
+</section>
+
+<app-footer></app-footer>
