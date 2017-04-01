@@ -9,9 +9,7 @@ export class DataService {
 
 private serviceUrl:String = 'http://modernstoreapilucaslopes.azurewebsites.net/'
 
-    constructor(private http:Http){
-
-    }
+    constructor(private http:Http){}
     createUser(data: any) {
         console.log(data);
         return this.http

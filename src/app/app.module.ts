@@ -53,7 +53,7 @@ import { NumberDirective } from './directives/number.directive';
     HttpModule,
     Routing
   ],
-  providers: [CartService,AuthService,{provide: LocationStrategy, useClass: HashLocationStrategy}],
+  providers: [CartService,AuthService, { provide: LocationStrategy, useClass: HashLocationStrategy } ],
   bootstrap: [AppComponent]
 })
 export class AppModule { }
