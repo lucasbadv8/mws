@@ -24,6 +24,7 @@ import { LoginPageComponent } from './pages/login-page/login-page.component';
 import { SignupPageComponent } from './pages/signup-page/signup-page.component';
 import { CartPageComponent } from './pages/cart-page/cart-page.component';
 import {LocationStrategy, HashLocationStrategy} from '@angular/common';
+import { PerfilPageComponent } from './pages/perfil-page/perfil-page.component';
 
 // Services
 import { CartService } from './services/cart.service';
@@ -31,6 +32,7 @@ import { AuthService } from './services/auth.service';
 
 //Directives
 import { NumberDirective } from './directives/number.directive';
+
 
 @NgModule({
   declarations: [
@@ -44,7 +46,8 @@ import { NumberDirective } from './directives/number.directive';
     LoginPageComponent,
     SignupPageComponent,
     CartPageComponent,
-    ErrorNotifyComponent
+    ErrorNotifyComponent,
+    PerfilPageComponent
   ],
   imports: [
     BrowserModule,

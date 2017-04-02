@@ -1,0 +1,78 @@
+<app-headbar></app-headbar>
+<section class="section">
+  <div class="container">
+    <div class="columns">
+      <div class="column is-one-third">
+        <div class="card">
+          <div class="card-content">
+            <div class="media">
+              <div class="media-left">
+                <figure class="image is-48x48">
+                  <img src="https://scontent.fbfh1-1.fna.fbcdn.net/v/t1.0-9/10347806_891136447580536_8401756029144765116_n.jpg?oh=25f691d1781cb3d7bdd520c453adcf56&oe=595E0AFD"
+                    alt="Image">
+                </figure>
+              </div>
+              <div class="media-content">
+                <p class="title is-4">Lucas Lopes</p>
+                <p class="subtitle is-6">@lucaslopesr</p>
+              </div>
+            </div>
+            <div class="content">
+              Lorem ipsum dolor sit amet, consectetur adipiscing elit. Phasellus nec iaculis mauris. 
+              <a>#maisUmTeste</a> <a>#VamoVer</a>
+              <br>
+              <small>11:09 PM - 1 Abr 2017</small>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div class="column is-two-third">
+          <section class="section">
+            <div class="container">
+              <div class="heading animated fadeIn">
+                <h1 class="title">Suas emcomendas</h1>
+              </div>
+              <br>
+              <table class="table is-striped">
+                <thead>
+                  <tr>
+                    <th class="has-text-centered">Data do pedido</th>
+                    <th class="has-text-centered">Situação</th>
+                    <th class="has-text-centered">Valor Total</th>
+                    <th></th>
+                  </tr>
+                </thead>
+                <tbody>
+                  <tr >
+                    <td class="has-text-left">01/04/2017</td>
+                    <td class="has-text-left">Processando</td>
+                    <td class="has-text-left"><strong>R$ 31,62</strong></td>
+                    <td class="has-text-centered"> <button (click)="removeItem(item)" type="button" class="button is-small is-darger"> Cancelar </button></td>
+                  </tr>
+                  <tr>
+                    <td class="has-text-left">20/03/2017</td>
+                    <td class="has-text-left">Entregue</td>
+                    <td class="has-text-left"><strong>R$ 23,26</strong></td>
+                    <td class="has-text-centered"> <button (click)="removeItem(item)" type="button" class="button is-small is-darger"> Cancelar </button></td>
+                  </tr>
+                  <tr >
+                    <td class="has-text-left">10/03/2017</td>
+                    <td class="has-text-left">Entregue</td>
+                    <td class="has-text-left"><strong>R$ 40,23</strong></td>
+                    <td class="has-text-centered"> <button (click)="removeItem(item)" type="button" class="button is-small is-darger"> Cancelar </button></td>
+                  </tr>
+                  <tr>
+                    <td class="has-text-left">01/03/2017</td>
+                    <td class="has-text-left">Cancelado</td>
+                    <td class="has-text-left"><strong>R$ 12,30</strong></td>
+                    <td class="has-text-centered"> <button (click)="removeItem(item)" type="button" class="button is-small is-darger"> Cancelar </button></td>
+                  </tr>
+                </tbody>
+              </table>
+            </div>
+          </section>
+      </div>
+    </div>
+  </div>
+</section>
+<app-footer></app-footer>
